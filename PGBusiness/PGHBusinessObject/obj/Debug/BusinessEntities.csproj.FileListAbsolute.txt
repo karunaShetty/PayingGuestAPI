@@ -1,0 +1,6 @@
+D:\Sample Projects for myself\PayingGuestHouseBusiness\PGBusiness\PGHBusinessObject\bin\Debug\PGBusiness.BusinessEntities.dll
+D:\Sample Projects for myself\PayingGuestHouseBusiness\PGBusiness\PGHBusinessObject\bin\Debug\PGBusiness.BusinessEntities.pdb
+D:\Sample Projects for myself\PayingGuestHouseBusiness\PGBusiness\PGHBusinessObject\obj\Debug\BusinessEntities.csprojAssemblyReference.cache
+D:\Sample Projects for myself\PayingGuestHouseBusiness\PGBusiness\PGHBusinessObject\obj\Debug\BusinessEntities.csproj.CoreCompileInputs.cache
+D:\Sample Projects for myself\PayingGuestHouseBusiness\PGBusiness\PGHBusinessObject\obj\Debug\PGBusiness.BusinessEntities.dll
+D:\Sample Projects for myself\PayingGuestHouseBusiness\PGBusiness\PGHBusinessObject\obj\Debug\PGBusiness.BusinessEntities.pdb

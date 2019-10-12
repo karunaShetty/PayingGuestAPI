@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PGStayBusinessModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_pgdb_users_info">
+          <Key>
+            <PropertyRef Name="user_info_id" />
+          </Key>
+          <Property Name="user_info_id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="middle_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="full_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="address_line_1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="address_line_2" Type="nvarchar(max)" />
+          <Property Name="pin_code" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="20" />
+          <Property Name="emailId" Type="nvarchar" MaxLength="50" />
+          <Property Name="created_date" Type="smalldatetime" />
+          <Property Name="created_by" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="modifed_date" Type="smalldatetime" />
+          <Property Name="modified_by" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="delete_ind" Type="tinyint" Nullable="false" />
+          <Property Name="active_ind" Type="tinyint" Nullable="false" />
+          <Property Name="modified_ind" Type="tinyint" Nullable="false" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="city_code" Type="int" />
+          <Property Name="state_code" Type="int" />
+          <Property Name="country_code" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_code_values">
+          <Key>
+            <PropertyRef Name="code_value_id" />
+          </Key>
+          <Property Name="code" Type="int" Nullable="false" />
+          <Property Name="code_value_type" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="code_value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="code_value_desc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="created_date" Type="smalldatetime" Nullable="false" />
+          <Property Name="created_by" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="delete_ind" Type="tinyint" Nullable="false" />
+          <Property Name="active_ind" Type="tinyint" Nullable="false" />
+          <Property Name="code_value_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="parent_code_value_id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="log_data" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="logged_user_information" Type="nvarchar(max)" />
+          <Property Name="login_id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="creation_date" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_paying_guest_homestay">
+          <Key>
+            <PropertyRef Name="pg_id" />
+          </Key>
+          <Property Name="pg_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="owner_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="incharge_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="incharge_person_details" Type="nvarchar(max)" />
+          <Property Name="contact_phone_number" Type="nvarchar" MaxLength="20" />
+          <Property Name="email_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_line_1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="address_line_2" Type="nvarchar(max)" />
+          <Property Name="area_code" Type="int" Nullable="false" />
+          <Property Name="created_date" Type="smalldatetime" Nullable="false" />
+          <Property Name="created_by" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="modified_date" Type="smalldatetime" />
+          <Property Name="modified_by" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="delete_ind" Type="tinyint" Nullable="false" />
+          <Property Name="active_ind" Type="tinyint" Nullable="false" />
+          <Property Name="modified_ind" Type="tinyint" />
+          <Property Name="pg_type_code" Type="int" Nullable="false" />
+          <Property Name="pin_code" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_pg_amenities">
+          <Key>
+            <PropertyRef Name="pg_amenity_id" />
+          </Key>
+          <Property Name="pg_amenity_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pg_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="amenity_code" Type="int" Nullable="false" />
+          <Property Name="delete_ind" Type="tinyint" Nullable="false" />
+          <Property Name="active_ind" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_pg_homestay_images">
+          <Key>
+            <PropertyRef Name="pg_image_id" />
+          </Key>
+          <Property Name="pg_image_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pg_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="image_fullpath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="image_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_date" Type="smalldatetime" Nullable="false" />
+          <Property Name="created_by" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="delete_ind" Type="tinyint" Nullable="false" />
+          <Property Name="active_ind" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_pg_sharing_classification">
+          <Key>
+            <PropertyRef Name="pg_sharing_id" />
+          </Key>
+          <Property Name="pg_sharing_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pg_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sharing_classification_code" Type="int" Nullable="false" />
+          <Property Name="delete_ind" Type="tinyint" Nullable="false" />
+          <Property Name="active_ind" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="login_id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_login_key" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_type_code" Type="int" />
+          <Property Name="created_date" Type="smalldatetime" />
+          <Property Name="modified_date" Type="smalldatetime" />
+          <Property Name="delete_ind" Type="tinyint" Nullable="false" />
+          <Property Name="active_ind" Type="tinyint" Nullable="false" />
+          <Property Name="modfied_ind" Type="tinyint" Nullable="false" />
+          <Property Name="created_by" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="modified_by" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <Association Name="FK_tbl_pgdb_users_info_tbl_pgsb_users">
+          <End Role="tbl_pgsb_users" Type="Self.tbl_pgsb_users" Multiplicity="1" />
+          <End Role="tbl_pgdb_users_info" Type="Self.tbl_pgdb_users_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_pgdb_users_info">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_pgsb_code_values_tbl_pgsb_code_values">
+          <End Role="tbl_pgsb_code_values" Type="Self.tbl_pgsb_code_values" Multiplicity="0..1" />
+          <End Role="tbl_pgsb_code_values1" Type="Self.tbl_pgsb_code_values" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_code_values">
+              <PropertyRef Name="code_value_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_code_values1">
+              <PropertyRef Name="parent_code_value_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_pgsb_paying_guest_homestay_tbl_pgsb_users">
+          <End Role="tbl_pgsb_users" Type="Self.tbl_pgsb_users" Multiplicity="1" />
+          <End Role="tbl_pgsb_paying_guest_homestay" Type="Self.tbl_pgsb_paying_guest_homestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_paying_guest_homestay">
+              <PropertyRef Name="incharge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_pgsb_pg_amenities_tbl_pgsb_paying_guest_homestay">
+          <End Role="tbl_pgsb_paying_guest_homestay" Type="Self.tbl_pgsb_paying_guest_homestay" Multiplicity="1" />
+          <End Role="tbl_pgsb_pg_amenities" Type="Self.tbl_pgsb_pg_amenities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_paying_guest_homestay">
+              <PropertyRef Name="pg_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_pg_amenities">
+              <PropertyRef Name="pg_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_pgsb_pg_homestay_images_tbl_pgsb_paying_guest_homestay">
+          <End Role="tbl_pgsb_paying_guest_homestay" Type="Self.tbl_pgsb_paying_guest_homestay" Multiplicity="1" />
+          <End Role="tbl_pgsb_pg_homestay_images" Type="Self.tbl_pgsb_pg_homestay_images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_paying_guest_homestay">
+              <PropertyRef Name="pg_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_pg_homestay_images">
+              <PropertyRef Name="pg_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_pgsb_pg_sharing_classification_tbl_pgsb_paying_guest_homestay">
+          <End Role="tbl_pgsb_paying_guest_homestay" Type="Self.tbl_pgsb_paying_guest_homestay" Multiplicity="1" />
+          <End Role="tbl_pgsb_pg_sharing_classification" Type="Self.tbl_pgsb_pg_sharing_classification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_paying_guest_homestay">
+              <PropertyRef Name="pg_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_pg_sharing_classification">
+              <PropertyRef Name="pg_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PGStayBusinessModelStoreContainer">
+          <EntitySet Name="tbl_pgdb_users_info" EntityType="Self.tbl_pgdb_users_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pgsb_code_values" EntityType="Self.tbl_pgsb_code_values" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pgsb_log" EntityType="Self.tbl_pgsb_log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pgsb_paying_guest_homestay" EntityType="Self.tbl_pgsb_paying_guest_homestay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pgsb_pg_amenities" EntityType="Self.tbl_pgsb_pg_amenities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pgsb_pg_homestay_images" EntityType="Self.tbl_pgsb_pg_homestay_images" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pgsb_pg_sharing_classification" EntityType="Self.tbl_pgsb_pg_sharing_classification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pgsb_users" EntityType="Self.tbl_pgsb_users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_pgdb_users_info_tbl_pgsb_users" Association="Self.FK_tbl_pgdb_users_info_tbl_pgsb_users">
+            <End Role="tbl_pgsb_users" EntitySet="tbl_pgsb_users" />
+            <End Role="tbl_pgdb_users_info" EntitySet="tbl_pgdb_users_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_code_values_tbl_pgsb_code_values" Association="Self.FK_tbl_pgsb_code_values_tbl_pgsb_code_values">
+            <End Role="tbl_pgsb_code_values" EntitySet="tbl_pgsb_code_values" />
+            <End Role="tbl_pgsb_code_values1" EntitySet="tbl_pgsb_code_values" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_paying_guest_homestay_tbl_pgsb_users" Association="Self.FK_tbl_pgsb_paying_guest_homestay_tbl_pgsb_users">
+            <End Role="tbl_pgsb_users" EntitySet="tbl_pgsb_users" />
+            <End Role="tbl_pgsb_paying_guest_homestay" EntitySet="tbl_pgsb_paying_guest_homestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_pg_amenities_tbl_pgsb_paying_guest_homestay" Association="Self.FK_tbl_pgsb_pg_amenities_tbl_pgsb_paying_guest_homestay">
+            <End Role="tbl_pgsb_paying_guest_homestay" EntitySet="tbl_pgsb_paying_guest_homestay" />
+            <End Role="tbl_pgsb_pg_amenities" EntitySet="tbl_pgsb_pg_amenities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_pg_homestay_images_tbl_pgsb_paying_guest_homestay" Association="Self.FK_tbl_pgsb_pg_homestay_images_tbl_pgsb_paying_guest_homestay">
+            <End Role="tbl_pgsb_paying_guest_homestay" EntitySet="tbl_pgsb_paying_guest_homestay" />
+            <End Role="tbl_pgsb_pg_homestay_images" EntitySet="tbl_pgsb_pg_homestay_images" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_pg_sharing_classification_tbl_pgsb_paying_guest_homestay" Association="Self.FK_tbl_pgsb_pg_sharing_classification_tbl_pgsb_paying_guest_homestay">
+            <End Role="tbl_pgsb_paying_guest_homestay" EntitySet="tbl_pgsb_paying_guest_homestay" />
+            <End Role="tbl_pgsb_pg_sharing_classification" EntitySet="tbl_pgsb_pg_sharing_classification" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PGStayBusinessModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_pgdb_users_info">
+          <Key>
+            <PropertyRef Name="user_info_id" />
+          </Key>
+          <Property Name="user_info_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="full_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address_line_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address_line_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pin_code" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="emailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="created_by" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="modifed_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="delete_ind" Type="Byte" Nullable="false" />
+          <Property Name="active_ind" Type="Byte" Nullable="false" />
+          <Property Name="modified_ind" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="tbl_pgsb_users" Relationship="Self.FK_tbl_pgdb_users_info_tbl_pgsb_users" FromRole="tbl_pgdb_users_info" ToRole="tbl_pgsb_users" />
+          <Property Name="area_code" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_code_values">
+          <Key>
+            <PropertyRef Name="code_value_id" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" />
+          <Property Name="code_value_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="code_value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="code_value_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="created_by" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="delete_ind" Type="Byte" Nullable="false" />
+          <Property Name="active_ind" Type="Byte" Nullable="false" />
+          <Property Name="code_value_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="parent_code_value_id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="tbl_pgsb_code_values1" Relationship="PGStayBusinessModel.FK_tbl_pgsb_code_values_tbl_pgsb_code_values" FromRole="tbl_pgsb_code_values" ToRole="tbl_pgsb_code_values1" />
+          <NavigationProperty Name="tbl_pgsb_code_values2" Relationship="PGStayBusinessModel.FK_tbl_pgsb_code_values_tbl_pgsb_code_values" FromRole="tbl_pgsb_code_values1" ToRole="tbl_pgsb_code_values" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="log_data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="logged_user_information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="login_id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="creation_date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_paying_guest_homestay">
+          <Key>
+            <PropertyRef Name="pg_id" />
+          </Key>
+          <Property Name="pg_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="owner_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="incharge_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="incharge_person_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contact_phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_line_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address_line_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pin_code" Type="Int32" Nullable="false" />
+          <Property Name="area_code" Type="Int32" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="created_by" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_by" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="delete_ind" Type="Byte" Nullable="false" />
+          <Property Name="active_ind" Type="Byte" Nullable="false" />
+          <Property Name="modified_ind" Type="Byte" />
+          <NavigationProperty Name="tbl_pgsb_users" Relationship="Self.FK_tbl_pgsb_paying_guest_homestay_tbl_pgsb_users" FromRole="tbl_pgsb_paying_guest_homestay" ToRole="tbl_pgsb_users" />
+          <NavigationProperty Name="tbl_pgsb_pg_amenities" Relationship="Self.FK_tbl_pgsb_pg_amenities_tbl_pgsb_paying_guest_homestay" FromRole="tbl_pgsb_paying_guest_homestay" ToRole="tbl_pgsb_pg_amenities" />
+          <NavigationProperty Name="tbl_pgsb_pg_homestay_images" Relationship="Self.FK_tbl_pgsb_pg_homestay_images_tbl_pgsb_paying_guest_homestay" FromRole="tbl_pgsb_paying_guest_homestay" ToRole="tbl_pgsb_pg_homestay_images" />
+          <Property Name="pg_type_code" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_pgsb_pg_sharing_classification" Relationship="PGStayBusinessModel.FK_tbl_pgsb_pg_sharing_classification_tbl_pgsb_paying_guest_homestay" FromRole="tbl_pgsb_paying_guest_homestay" ToRole="tbl_pgsb_pg_sharing_classification" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_pg_amenities">
+          <Key>
+            <PropertyRef Name="pg_amenity_id" />
+          </Key>
+          <Property Name="pg_amenity_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pg_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="amenity_code" Type="Int32" Nullable="false" />
+          <Property Name="delete_ind" Type="Byte" Nullable="false" />
+          <Property Name="active_ind" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="tbl_pgsb_paying_guest_homestay" Relationship="Self.FK_tbl_pgsb_pg_amenities_tbl_pgsb_paying_guest_homestay" FromRole="tbl_pgsb_pg_amenities" ToRole="tbl_pgsb_paying_guest_homestay" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_pg_homestay_images">
+          <Key>
+            <PropertyRef Name="pg_image_id" />
+          </Key>
+          <Property Name="pg_image_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pg_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="image_fullpath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="image_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="created_by" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="delete_ind" Type="Byte" Nullable="false" />
+          <Property Name="active_ind" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="tbl_pgsb_paying_guest_homestay" Relationship="Self.FK_tbl_pgsb_pg_homestay_images_tbl_pgsb_paying_guest_homestay" FromRole="tbl_pgsb_pg_homestay_images" ToRole="tbl_pgsb_paying_guest_homestay" />
+        </EntityType>
+        <EntityType Name="tbl_pgsb_users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="login_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_login_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_type_code" Type="Int32" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="modified_date" Type="DateTime" Precision="0" />
+          <Property Name="delete_ind" Type="Byte" Nullable="false" />
+          <Property Name="active_ind" Type="Byte" Nullable="false" />
+          <Property Name="modfied_ind" Type="Byte" Nullable="false" />
+          <Property Name="created_by" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="modified_by" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="tbl_pgdb_users_info" Relationship="Self.FK_tbl_pgdb_users_info_tbl_pgsb_users" FromRole="tbl_pgsb_users" ToRole="tbl_pgdb_users_info" />
+          <NavigationProperty Name="tbl_pgsb_paying_guest_homestay" Relationship="Self.FK_tbl_pgsb_paying_guest_homestay_tbl_pgsb_users" FromRole="tbl_pgsb_users" ToRole="tbl_pgsb_paying_guest_homestay" />
+        </EntityType>
+        <Association Name="FK_tbl_pgdb_users_info_tbl_pgsb_users">
+          <End Role="tbl_pgsb_users" Type="Self.tbl_pgsb_users" Multiplicity="1" />
+          <End Role="tbl_pgdb_users_info" Type="Self.tbl_pgdb_users_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_pgdb_users_info">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_pgsb_paying_guest_homestay_tbl_pgsb_users">
+          <End Role="tbl_pgsb_users" Type="Self.tbl_pgsb_users" Multiplicity="1" />
+          <End Role="tbl_pgsb_paying_guest_homestay" Type="Self.tbl_pgsb_paying_guest_homestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_paying_guest_homestay">
+              <PropertyRef Name="incharge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_pgsb_pg_amenities_tbl_pgsb_paying_guest_homestay">
+          <End Role="tbl_pgsb_paying_guest_homestay" Type="Self.tbl_pgsb_paying_guest_homestay" Multiplicity="1" />
+          <End Role="tbl_pgsb_pg_amenities" Type="Self.tbl_pgsb_pg_amenities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_paying_guest_homestay">
+              <PropertyRef Name="pg_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_pg_amenities">
+              <PropertyRef Name="pg_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_pgsb_pg_homestay_images_tbl_pgsb_paying_guest_homestay">
+          <End Role="tbl_pgsb_paying_guest_homestay" Type="Self.tbl_pgsb_paying_guest_homestay" Multiplicity="1" />
+          <End Role="tbl_pgsb_pg_homestay_images" Type="Self.tbl_pgsb_pg_homestay_images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_paying_guest_homestay">
+              <PropertyRef Name="pg_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_pg_homestay_images">
+              <PropertyRef Name="pg_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PGStayBusinessEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_pgdb_users_info" EntityType="Self.tbl_pgdb_users_info" />
+          <EntitySet Name="tbl_pgsb_code_values" EntityType="Self.tbl_pgsb_code_values" />
+          <EntitySet Name="tbl_pgsb_log" EntityType="Self.tbl_pgsb_log" />
+          <EntitySet Name="tbl_pgsb_paying_guest_homestay" EntityType="Self.tbl_pgsb_paying_guest_homestay" />
+          <EntitySet Name="tbl_pgsb_pg_amenities" EntityType="Self.tbl_pgsb_pg_amenities" />
+          <EntitySet Name="tbl_pgsb_pg_homestay_images" EntityType="Self.tbl_pgsb_pg_homestay_images" />
+          <EntitySet Name="tbl_pgsb_users" EntityType="Self.tbl_pgsb_users" />
+          <AssociationSet Name="FK_tbl_pgdb_users_info_tbl_pgsb_users" Association="Self.FK_tbl_pgdb_users_info_tbl_pgsb_users">
+            <End Role="tbl_pgsb_users" EntitySet="tbl_pgsb_users" />
+            <End Role="tbl_pgdb_users_info" EntitySet="tbl_pgdb_users_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_paying_guest_homestay_tbl_pgsb_users" Association="Self.FK_tbl_pgsb_paying_guest_homestay_tbl_pgsb_users">
+            <End Role="tbl_pgsb_users" EntitySet="tbl_pgsb_users" />
+            <End Role="tbl_pgsb_paying_guest_homestay" EntitySet="tbl_pgsb_paying_guest_homestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_pg_amenities_tbl_pgsb_paying_guest_homestay" Association="Self.FK_tbl_pgsb_pg_amenities_tbl_pgsb_paying_guest_homestay">
+            <End Role="tbl_pgsb_paying_guest_homestay" EntitySet="tbl_pgsb_paying_guest_homestay" />
+            <End Role="tbl_pgsb_pg_amenities" EntitySet="tbl_pgsb_pg_amenities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_pg_homestay_images_tbl_pgsb_paying_guest_homestay" Association="Self.FK_tbl_pgsb_pg_homestay_images_tbl_pgsb_paying_guest_homestay">
+            <End Role="tbl_pgsb_paying_guest_homestay" EntitySet="tbl_pgsb_paying_guest_homestay" />
+            <End Role="tbl_pgsb_pg_homestay_images" EntitySet="tbl_pgsb_pg_homestay_images" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_pgsb_code_values_tbl_pgsb_code_values" Association="PGStayBusinessModel.FK_tbl_pgsb_code_values_tbl_pgsb_code_values">
+            <End Role="tbl_pgsb_code_values" EntitySet="tbl_pgsb_code_values" />
+            <End Role="tbl_pgsb_code_values1" EntitySet="tbl_pgsb_code_values" />
+          </AssociationSet>
+          <EntitySet Name="tbl_pgsb_pg_sharing_classification" EntityType="PGStayBusinessModel.tbl_pgsb_pg_sharing_classification" />
+          <AssociationSet Name="FK_tbl_pgsb_pg_sharing_classification_tbl_pgsb_paying_guest_homestay" Association="PGStayBusinessModel.FK_tbl_pgsb_pg_sharing_classification_tbl_pgsb_paying_guest_homestay">
+            <End Role="tbl_pgsb_paying_guest_homestay" EntitySet="tbl_pgsb_paying_guest_homestay" />
+            <End Role="tbl_pgsb_pg_sharing_classification" EntitySet="tbl_pgsb_pg_sharing_classification" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_tbl_pgsb_code_values_tbl_pgsb_code_values">
+          <End Type="PGStayBusinessModel.tbl_pgsb_code_values" Role="tbl_pgsb_code_values" Multiplicity="0..1" />
+          <End Type="PGStayBusinessModel.tbl_pgsb_code_values" Role="tbl_pgsb_code_values1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_code_values">
+              <PropertyRef Name="code_value_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_code_values1">
+              <PropertyRef Name="parent_code_value_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_pgsb_pg_sharing_classification">
+          <Key>
+            <PropertyRef Name="pg_sharing_id" />
+          </Key>
+          <Property Name="pg_sharing_id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="pg_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sharing_classification_code" Type="Int32" Nullable="false" />
+          <Property Name="delete_ind" Type="Byte" Nullable="false" />
+          <Property Name="active_ind" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="tbl_pgsb_paying_guest_homestay" Relationship="PGStayBusinessModel.FK_tbl_pgsb_pg_sharing_classification_tbl_pgsb_paying_guest_homestay" FromRole="tbl_pgsb_pg_sharing_classification" ToRole="tbl_pgsb_paying_guest_homestay" />
+        </EntityType>
+        <Association Name="FK_tbl_pgsb_pg_sharing_classification_tbl_pgsb_paying_guest_homestay">
+          <End Type="PGStayBusinessModel.tbl_pgsb_paying_guest_homestay" Role="tbl_pgsb_paying_guest_homestay" Multiplicity="1" />
+          <End Type="PGStayBusinessModel.tbl_pgsb_pg_sharing_classification" Role="tbl_pgsb_pg_sharing_classification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pgsb_paying_guest_homestay">
+              <PropertyRef Name="pg_id" />
+            </Principal>
+            <Dependent Role="tbl_pgsb_pg_sharing_classification">
+              <PropertyRef Name="pg_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PGStayBusinessModelStoreContainer" CdmEntityContainer="PGStayBusinessEntities">
+          <EntitySetMapping Name="tbl_pgdb_users_info">
+            <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgdb_users_info">
+              <MappingFragment StoreEntitySet="tbl_pgdb_users_info">
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="user_info_id" ColumnName="user_info_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="address_line_1" ColumnName="address_line_1" />
+                <ScalarProperty Name="address_line_2" ColumnName="address_line_2" />
+                <ScalarProperty Name="pin_code" ColumnName="pin_code" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="emailId" ColumnName="emailId" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modifed_date" ColumnName="modifed_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+                <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+                <ScalarProperty Name="modified_ind" ColumnName="modified_ind" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pgsb_code_values">
+            <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_code_values">
+              <MappingFragment StoreEntitySet="tbl_pgsb_code_values">
+                <ScalarProperty Name="parent_code_value_id" ColumnName="parent_code_value_id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="code_value_type" ColumnName="code_value_type" />
+                <ScalarProperty Name="code_value" ColumnName="code_value" />
+                <ScalarProperty Name="code_value_desc" ColumnName="code_value_desc" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+                <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+                <ScalarProperty Name="code_value_id" ColumnName="code_value_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pgsb_log">
+            <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_log">
+              <MappingFragment StoreEntitySet="tbl_pgsb_log">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="log_data" ColumnName="log_data" />
+                <ScalarProperty Name="logged_user_information" ColumnName="logged_user_information" />
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pgsb_paying_guest_homestay">
+            <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_paying_guest_homestay">
+              <MappingFragment StoreEntitySet="tbl_pgsb_paying_guest_homestay">
+                <ScalarProperty Name="pg_type_code" ColumnName="pg_type_code" />
+                <ScalarProperty Name="pg_id" ColumnName="pg_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+                <ScalarProperty Name="incharge_id" ColumnName="incharge_id" />
+                <ScalarProperty Name="incharge_person_details" ColumnName="incharge_person_details" />
+                <ScalarProperty Name="contact_phone_number" ColumnName="contact_phone_number" />
+                <ScalarProperty Name="email_id" ColumnName="email_id" />
+                <ScalarProperty Name="address_line_1" ColumnName="address_line_1" />
+                <ScalarProperty Name="address_line_2" ColumnName="address_line_2" />
+                <ScalarProperty Name="pin_code" ColumnName="pin_code" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+                <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+                <ScalarProperty Name="modified_ind" ColumnName="modified_ind" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pgsb_pg_amenities">
+            <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_pg_amenities">
+              <MappingFragment StoreEntitySet="tbl_pgsb_pg_amenities">
+                <ScalarProperty Name="pg_amenity_id" ColumnName="pg_amenity_id" />
+                <ScalarProperty Name="pg_id" ColumnName="pg_id" />
+                <ScalarProperty Name="amenity_code" ColumnName="amenity_code" />
+                <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+                <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pgsb_pg_homestay_images">
+            <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_pg_homestay_images">
+              <MappingFragment StoreEntitySet="tbl_pgsb_pg_homestay_images">
+                <ScalarProperty Name="pg_image_id" ColumnName="pg_image_id" />
+                <ScalarProperty Name="pg_id" ColumnName="pg_id" />
+                <ScalarProperty Name="image_fullpath" ColumnName="image_fullpath" />
+                <ScalarProperty Name="image_name" ColumnName="image_name" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+                <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pgsb_users">
+            <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_users">
+              <MappingFragment StoreEntitySet="tbl_pgsb_users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+                <ScalarProperty Name="user_login_key" ColumnName="user_login_key" />
+                <ScalarProperty Name="user_type_code" ColumnName="user_type_code" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+                <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+                <ScalarProperty Name="modfied_ind" ColumnName="modfied_ind" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pgsb_pg_sharing_classification">
+            <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_pg_sharing_classification">
+              <MappingFragment StoreEntitySet="tbl_pgsb_pg_sharing_classification">
+                <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+                <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+                <ScalarProperty Name="sharing_classification_code" ColumnName="sharing_classification_code" />
+                <ScalarProperty Name="pg_id" ColumnName="pg_id" />
+                <ScalarProperty Name="pg_sharing_id" ColumnName="pg_sharing_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

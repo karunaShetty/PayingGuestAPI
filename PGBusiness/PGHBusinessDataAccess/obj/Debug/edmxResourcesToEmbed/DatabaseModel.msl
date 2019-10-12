@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PGStayBusinessModelStoreContainer" CdmEntityContainer="PGStayBusinessEntities">
+    <EntitySetMapping Name="tbl_pgdb_users_info">
+      <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgdb_users_info">
+        <MappingFragment StoreEntitySet="tbl_pgdb_users_info">
+          <ScalarProperty Name="area_code" ColumnName="area_code" />
+          <ScalarProperty Name="user_info_id" ColumnName="user_info_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="address_line_1" ColumnName="address_line_1" />
+          <ScalarProperty Name="address_line_2" ColumnName="address_line_2" />
+          <ScalarProperty Name="pin_code" ColumnName="pin_code" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="emailId" ColumnName="emailId" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="modifed_date" ColumnName="modifed_date" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+          <ScalarProperty Name="modified_ind" ColumnName="modified_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pgsb_code_values">
+      <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_code_values">
+        <MappingFragment StoreEntitySet="tbl_pgsb_code_values">
+          <ScalarProperty Name="parent_code_value_id" ColumnName="parent_code_value_id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="code_value_type" ColumnName="code_value_type" />
+          <ScalarProperty Name="code_value" ColumnName="code_value" />
+          <ScalarProperty Name="code_value_desc" ColumnName="code_value_desc" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+          <ScalarProperty Name="code_value_id" ColumnName="code_value_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pgsb_log">
+      <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_log">
+        <MappingFragment StoreEntitySet="tbl_pgsb_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="log_data" ColumnName="log_data" />
+          <ScalarProperty Name="logged_user_information" ColumnName="logged_user_information" />
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+          <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pgsb_paying_guest_homestay">
+      <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_paying_guest_homestay">
+        <MappingFragment StoreEntitySet="tbl_pgsb_paying_guest_homestay">
+          <ScalarProperty Name="pg_type_code" ColumnName="pg_type_code" />
+          <ScalarProperty Name="pg_id" ColumnName="pg_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+          <ScalarProperty Name="incharge_id" ColumnName="incharge_id" />
+          <ScalarProperty Name="incharge_person_details" ColumnName="incharge_person_details" />
+          <ScalarProperty Name="contact_phone_number" ColumnName="contact_phone_number" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="address_line_1" ColumnName="address_line_1" />
+          <ScalarProperty Name="address_line_2" ColumnName="address_line_2" />
+          <ScalarProperty Name="pin_code" ColumnName="pin_code" />
+          <ScalarProperty Name="area_code" ColumnName="area_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+          <ScalarProperty Name="modified_ind" ColumnName="modified_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pgsb_pg_amenities">
+      <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_pg_amenities">
+        <MappingFragment StoreEntitySet="tbl_pgsb_pg_amenities">
+          <ScalarProperty Name="pg_amenity_id" ColumnName="pg_amenity_id" />
+          <ScalarProperty Name="pg_id" ColumnName="pg_id" />
+          <ScalarProperty Name="amenity_code" ColumnName="amenity_code" />
+          <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pgsb_pg_homestay_images">
+      <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_pg_homestay_images">
+        <MappingFragment StoreEntitySet="tbl_pgsb_pg_homestay_images">
+          <ScalarProperty Name="pg_image_id" ColumnName="pg_image_id" />
+          <ScalarProperty Name="pg_id" ColumnName="pg_id" />
+          <ScalarProperty Name="image_fullpath" ColumnName="image_fullpath" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pgsb_users">
+      <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_users">
+        <MappingFragment StoreEntitySet="tbl_pgsb_users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+          <ScalarProperty Name="user_login_key" ColumnName="user_login_key" />
+          <ScalarProperty Name="user_type_code" ColumnName="user_type_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+          <ScalarProperty Name="modfied_ind" ColumnName="modfied_ind" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pgsb_pg_sharing_classification">
+      <EntityTypeMapping TypeName="PGStayBusinessModel.tbl_pgsb_pg_sharing_classification">
+        <MappingFragment StoreEntitySet="tbl_pgsb_pg_sharing_classification">
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+          <ScalarProperty Name="delete_ind" ColumnName="delete_ind" />
+          <ScalarProperty Name="sharing_classification_code" ColumnName="sharing_classification_code" />
+          <ScalarProperty Name="pg_id" ColumnName="pg_id" />
+          <ScalarProperty Name="pg_sharing_id" ColumnName="pg_sharing_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
